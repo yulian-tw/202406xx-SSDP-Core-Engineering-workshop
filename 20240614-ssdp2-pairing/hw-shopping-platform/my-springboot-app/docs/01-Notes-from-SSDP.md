@@ -74,7 +74,8 @@
            Caused by: org.springframework.core.NestedIOException at SimpleMetadataReader.java:60
              Caused by: java.lang.IllegalArgumentException at ClassReader.java:199
        ```
-   - [ ] other step ?
+   - [X] Resolve `./gradlew bootRun`.
+   - [ ] `./gradlew test` still fails. Let's comment out SpringBootTest.
 4. [ ] Switch to use latest Java? It's using global outdated Java/Gradle.
 
    **Findings**

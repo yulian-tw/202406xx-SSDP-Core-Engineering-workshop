@@ -67,6 +67,14 @@
    - [ ] Identify root cause of test failure.
      - `./gradlew test` still `java.lang.IllegalStateException` even with `docker-compose up`. What's the problem?
      - `./gradlew bootRun` gives below output. Invalid `build.gradle`?
+   - [X] Test with Java upgrade. Use Java version 22 without upgrading gradle version. Outputs:
+       ```
+       MyApplicationTests > initializationError FAILED
+         org.springframework.beans.factory.BeanDefinitionStoreException at ClassPathScanningCandidateComponentProvider.java:452
+           Caused by: org.springframework.core.NestedIOException at SimpleMetadataReader.java:60
+             Caused by: java.lang.IllegalArgumentException at ClassReader.java:199
+       ```
+   - [ ] other step ?
 4. [ ] Switch to use latest Java? It's using global outdated Java/Gradle.
 
    **Findings**

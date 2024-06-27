@@ -55,5 +55,27 @@
    > what is causing java.lang.IllegalStateException at Assert.java:76 👍
    - Helpful response: general guidelines for troubleshooting java.lang.IllegalStateException in Spring Boot tests.
 3. [ ] Fix the test
+
+   **Findings**
+   blah..
+
+   **Chat Records**
+   > can you help me to write a docker-compose file to spin up a mysql db ?
+   - (docker-compose.yml seems legit. Update application.properties to verify) ⏲️
+
+   **TODO**
+   - [ ] Identify root cause of test failure.
+     - `./gradlew test` still `java.lang.IllegalStateException` even with `docker-compose up`. What's the problem?
+     - `./gradlew bootRun` gives below output. Invalid `build.gradle`?
 4. [ ] Switch to use latest Java? It's using global outdated Java/Gradle.
+
+   **Findings**
+   blah..
+
+   **Chat Records**
+   > blah..
+   - blah blah..
+
+   **TODO**
+   - [ ] blah..
 5. [ ] Update the README ??

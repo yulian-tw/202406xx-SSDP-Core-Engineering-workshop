@@ -75,8 +75,9 @@
              Caused by: java.lang.IllegalArgumentException at ClassReader.java:199
        ```
    - [X] Resolve `./gradlew bootRun`.
-   - [ ] `./gradlew test` still fails. Let's comment out SpringBootTest.
-4. [ ] Switch to use latest Java? It's using global outdated Java/Gradle.
+   - [X] `./gradlew test` still fails. Let's comment out SpringBootTest and try with basic Java unit test. Root cause of test failure is around SpringBootTest / WebMvc set up.
+   - [ ] Fix Spring Test dependency
+4. Optional: Switch to use latest Java? It's using global outdated Java/Gradle.
 
    **Findings**
    Use Java version 22.
@@ -85,6 +86,4 @@
    > which is the latest gradle version compatible with java 22
    - As of my last update in April 2023, Java 22 has not been released ... it's advisable to check the official Gradle documentation 🤣
 
-   **TODO**
-   - [ ] blah..
 5. [ ] Update the README ??

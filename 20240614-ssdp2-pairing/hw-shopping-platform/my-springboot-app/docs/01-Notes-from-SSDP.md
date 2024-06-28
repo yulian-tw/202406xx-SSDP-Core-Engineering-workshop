@@ -91,5 +91,12 @@
    > which is the latest gradle version compatible with java 22
    - As of my last update in April 2023, Java 22 has not been released ... it's advisable to check the official Gradle documentation 🤣
 
-5. [ ] Get test running without needing to have docker-compose up.
+5. [X] Get test running without needing to have docker-compose up.
+
+   **Findings**
+   SpringBootTest Context Aware
+
+   **Chat Records**
+   > how to run SpringBootTest without DefaultContextLoader
+   - ( GH Copilot gives working solution with explanation . see commit for the actual fix ) 👍
 6. [ ] Update the README ??

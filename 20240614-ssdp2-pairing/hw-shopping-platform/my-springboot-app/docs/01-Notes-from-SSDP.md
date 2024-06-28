@@ -57,11 +57,14 @@
 3. [ ] Fix the test
 
    **Findings**
-   blah..
+   If we don't know about Java Spring framework, it's hard to know what to ask GitHub Copilot Chat. It's able to assist by hinting the required fix and explaining good practices.
 
    **Chat Records**
    > can you help me to write a docker-compose file to spin up a mysql db ?
    - (docker-compose.yml seems legit. Update application.properties to verify) ⏲️
+
+   > can you give me a application test properties for Spring Boot Test ?
+   - ( application-test.properties looks valid, it also suggest using in-memory database with explaination ) 👍
 
    **TODO**
    - [ ] Identify root cause of test failure.
@@ -77,6 +80,7 @@
    - [X] Resolve `./gradlew bootRun`.
    - [X] `./gradlew test` still fails. Let's comment out SpringBootTest and try with basic Java unit test. Root cause of test failure is around SpringBootTest / WebMvc set up.
    - [ ] Fix Spring Test dependency
+     - [X] Fix WebMvcTest dependency ( package issue )
 4. Optional: Switch to use latest Java? It's using global outdated Java/Gradle.
 
    **Findings**

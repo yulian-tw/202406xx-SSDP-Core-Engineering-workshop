@@ -1,6 +1,6 @@
 package com.myapp;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 // import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +15,7 @@ class MyApplicationTests {
 
     @Test
     void smokeUnitTest() {
-        assertTrue(1==2, "1 is not equal to 2");
+        assertFalse(1==2, "1 is not equal to 2");
     }
 
 }

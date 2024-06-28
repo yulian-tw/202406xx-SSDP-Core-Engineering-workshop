@@ -54,7 +54,7 @@
 
    > what is causing java.lang.IllegalStateException at Assert.java:76 👍
    - Helpful response: general guidelines for troubleshooting java.lang.IllegalStateException in Spring Boot tests.
-3. [ ] Fix the test
+3. Fix the initial test setup
 
    **Findings**
    If we don't know about Java Spring framework, it's hard to know what to ask GitHub Copilot Chat. It's able to assist by hinting the required fix and explaining good practices.
@@ -64,12 +64,12 @@
    - (docker-compose.yml seems legit. Update application.properties to verify) ⏲️
 
    > can you give me a application test properties for Spring Boot Test ?
-   - ( application-test.properties looks valid, it also suggest using in-memory database with explaination ) 👍
+   - ( application-test.properties looks valid, it also suggest using in-memory database with explaination, working steps to run test with h2 database ) 👍
 
    **TODO**
-   - [ ] Identify root cause of test failure.
-     - `./gradlew test` still `java.lang.IllegalStateException` even with `docker-compose up`. What's the problem?
-     - `./gradlew bootRun` gives below output. Invalid `build.gradle`?
+   - Root cause of test failure.
+     - `./gradlew test` still `java.lang.IllegalStateException` even with `docker-compose up`. What's the problem? --> Missing Spring Configuration for test
+     - `./gradlew bootRun` gives error. Invalid `build.gradle`? --> missing dependency
    - [X] Test with Java upgrade. Use Java version 22 without upgrading gradle version. Outputs:
        ```
        MyApplicationTests > initializationError FAILED
@@ -79,8 +79,9 @@
        ```
    - [X] Resolve `./gradlew bootRun`.
    - [X] `./gradlew test` still fails. Let's comment out SpringBootTest and try with basic Java unit test. Root cause of test failure is around SpringBootTest / WebMvc set up.
-   - [ ] Fix Spring Test dependency
+   - [X] Fix Spring Test dependency
      - [X] Fix WebMvcTest dependency ( package issue )
+     - [X] Fix SpringBootTest dependency ( application-test.properties, package issue )
 4. Optional: Switch to use latest Java? It's using global outdated Java/Gradle.
 
    **Findings**
@@ -90,4 +91,5 @@
    > which is the latest gradle version compatible with java 22
    - As of my last update in April 2023, Java 22 has not been released ... it's advisable to check the official Gradle documentation 🤣
 
-5. [ ] Update the README ??
+5. [ ] Get test running without needing to have docker-compose up.
+6. [ ] Update the README ??
